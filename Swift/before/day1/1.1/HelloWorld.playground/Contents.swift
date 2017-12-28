@@ -22,3 +22,12 @@ let strList = ([h, ell, o, world]).flatMap({ value in
 print(strList.joined())
 
  //模範解答3 reduceを利用した場合
+let strList2 = ([h, ell, o, world]).reduce("",{ result, value in
+    guard let value = value else{
+        return ""
+    }
+     return result + value
+    })
+
+
+print(strList2)

@@ -39,6 +39,8 @@ Swiftは型が厳密。　Intにもいろいろな種類のIntがあり、異な
   - var dict1: [String : String] = [String : String]()
   - dict1["iPhone6s"] = "docomo"
   - dict1["iPhone6Plus"] = "au"
+ 3. 利用の仕方
+  - dict["iPhone6s"]
 
 ## Optional型
  - nil: 値がない状態を示す。
@@ -314,17 +316,26 @@ Swiftは型が厳密。　Intにもいろいろな種類のIntがあり、異な
 
 ## reduce
  - 配列内の値を使って集計を行いたいときに利用を行う
- -
+ - 最初の引数に、Initialのvalueを記載する。
+ - return のたびにresultが書き換わっていく。
  1. 利用の仕方
  ```
  //reduce
-  let ahoNumbers = (1...9).reduce(1〜10で3の倍数だけアホになる。",{result, value in
+  let ahoNumbers = (1...9).reduce("1〜10で3の倍数だけアホになる。",{result, value in
      if (value % 3 == 0){
          return result + "\(value):アホになる "
      } else{
          return result + "\(value):通常 "
      }
   })
+ ```
+
+## flatMap
+ - 配列内の要素に処理を施して、nil出ないもののみを配列にする
+ ```
+let genderList = [0, 1, 2, 3, 0, 1].flatMap({ value in
+    return Gender(rawValue: value)
+})
  ```
 
 ## 気になリスト
